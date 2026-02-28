@@ -1,3 +1,32 @@
 @use "./base.scss";
 
-// put your custom CSS here!
+:root {
+  --gap: 24px;
+  --nav-width: 1024px;
+  --header-height: 60px;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover,
+a:focus-visible {
+  text-decoration: none;
+}
+
+.page > #quartz-body .sidebar.left .page-title a {
+  color: var(--secondary);
+}
+
+.backlinks .internal,
+.recent-notes .internal,
+.explorer-content .internal,
+.tag-link {
+  border-radius: 999px;
+}
+
+.popover {
+  border-radius: 10px;
+}
