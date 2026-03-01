@@ -63,15 +63,4 @@ a:focus-visible {
   border-radius: 10px;
 }
 
-/* Wrap long lines in code blocks instead of horizontal scroll */
-pre {
-  overflow-x: visible;
-
-  & > code {
-    overflow-x: visible;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-  }
-}
 
