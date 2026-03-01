@@ -3,9 +3,11 @@ import style from "./styles/footer.scss"
 
 export default (() => {
   const Footer: QuartzComponent = ({ displayClass }: QuartzComponentProps) => {
+    const className = ["footer", displayClass].filter(Boolean).join(" ")
+
     return (
-      <footer class={`${displayClass ?? ""}`}>
-        <p>© 2026, Ben Kolligs</p>
+      <footer class={className}>
+        <span>© 2026, Ben Kolligs</span>
       </footer>
     )
   }

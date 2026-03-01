@@ -5,11 +5,24 @@
   --nav-width: 1024px;
   --main-width: 720px;
   --header-height: 60px;
+  --footer-height: 60px;
 }
 
 /* Match PaperMod base body text sizing */
 body {
   font-size: 18px;
+}
+
+/* Keep footer outside #quartz-root at PaperMod vertical rhythm */
+#quartz-root {
+  width: 100%;
+  min-height: calc(100vh - var(--header-height) - var(--footer-height));
+}
+
+@media (min-width: 801px) {
+  .page > #quartz-body .sidebar {
+    height: calc(100vh - var(--header-height) - var(--footer-height) - var(--gap) * 2);
+  }
 }
 
 /* Match PaperMod light-mode canvas color */
@@ -49,3 +62,4 @@ a:focus-visible {
 .popover {
   border-radius: 10px;
 }
+
