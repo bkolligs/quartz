@@ -3,8 +3,22 @@
 :root {
   --gap: 24px;
   --nav-width: 1024px;
+  --main-width: 720px;
   --header-height: 60px;
 }
+
+/* Match PaperMod light-mode canvas color */
+:root[saved-theme="light"] body {
+  background-color: rgb(245, 245, 245);
+}
+
+/* Match PaperMod content column width */
+.page > #quartz-body .center {
+  width: 100%;
+  min-width: 0;
+  max-width: calc(var(--main-width) + var(--gap) * 2);
+}
+
 
 a,
 a:visited {
