@@ -7,6 +7,11 @@
   --header-height: 60px;
 }
 
+/* Match PaperMod base body text sizing */
+body {
+  font-size: 18px;
+}
+
 /* Match PaperMod light-mode canvas color */
 :root[saved-theme="light"] body {
   background-color: rgb(245, 245, 245);
