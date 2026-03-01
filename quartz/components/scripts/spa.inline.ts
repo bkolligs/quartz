@@ -18,11 +18,16 @@ const isLocalUrl = (href: string) => {
   return false
 }
 
+const NOTES_PREFIX = "/notes"
+
 const isSamePage = (url: URL): boolean => {
   const sameOrigin = url.origin === window.location.origin
   const samePath = url.pathname === window.location.pathname
   return sameOrigin && samePath
 }
+
+const isNotesPath = (pathname: string): boolean =>
+  pathname === NOTES_PREFIX || pathname.startsWith(`${NOTES_PREFIX}/`)
 
 const getOpts = ({ target }: Event): { url: URL; scroll?: boolean } | undefined => {
   if (!isElement(target)) return
@@ -32,7 +37,14 @@ const getOpts = ({ target }: Event): { url: URL; scroll?: boolean } | undefined 
   if ("routerIgnore" in a.dataset) return
   const { href } = a
   if (!isLocalUrl(href)) return
-  return { url: new URL(href), scroll: "routerNoscroll" in a.dataset ? false : undefined }
+
+  const url = new URL(href)
+
+  // Keep SPA navigation within notes only.
+  // Leaving /notes should hard reload so Hugo page scripts/styles initialize cleanly.
+  if (isNotesPath(window.location.pathname) && !isNotesPath(url.pathname)) return
+
+  return { url, scroll: "routerNoscroll" in a.dataset ? false : undefined }
 }
 
 function notifyNav(url: FullSlug) {

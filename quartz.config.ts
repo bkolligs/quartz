@@ -8,13 +8,13 @@ import * as Plugin from "./quartz/plugins"
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "Ben Kolligs Notes",
+    pageTitle: "The Notebook",
     pageTitleSuffix: "",
-    enableSPA: false,
+    enableSPA: true,
     enablePopovers: true,
     analytics: null,
     locale: "en-US",
-    baseUrl: "benkolligs.com/notes-kb",
+    baseUrl: "benkolligs.com/notes",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
     theme: {

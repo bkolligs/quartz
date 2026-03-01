@@ -58,7 +58,7 @@ const HugoNav: QuartzComponent = ({ cfg }: QuartzComponentProps) => {
           <a href="/blog/"><span>Blog</span></a>
         </li>
         <li>
-          <a href="/notes-kb/"><span class="active">Notes</span></a>
+          <a href="/notes/"><span class="active">Notes</span></a>
         </li>
         <li>
           <a href="/about/"><span>About</span></a>
