@@ -1,5 +1,6 @@
 import { QuartzConfig } from "./quartz/cfg"
 import * as Plugin from "./quartz/plugins"
+import { benkolligsOgImage } from "./quartz/util/benkolligsOgImage"
 
 /**
  * Quartz 4 Configuration
@@ -86,8 +87,10 @@ const config: QuartzConfig = {
       Plugin.Static(),
       Plugin.Favicon(),
       Plugin.NotFoundPage(),
-      // Disabled for local/offline build reliability in Hugo integration.
-      // Plugin.CustomOgImages(),
+      Plugin.CustomOgImages({
+        colorScheme: "lightMode",
+        imageStructure: benkolligsOgImage,
+      }),
     ],
   },
 }
